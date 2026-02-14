@@ -1,0 +1,42 @@
+{
+  "name": "MessFit - Indian Mess Food Tracker",
+  "short_name": "MessFit",
+  "description": "Track your mess food calories and nutrition",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "lifestyle", "food"],
+  "shortcuts": [
+    {
+      "name": "Log Breakfast",
+      "url": "/meal-selection?type=breakfast",
+      "description": "Quickly log breakfast"
+    },
+    {
+      "name": "Log Lunch",
+      "url": "/meal-selection?type=lunch",
+      "description": "Quickly log lunch"
+    },
+    {
+      "name": "Dashboard",
+      "url": "/dashboard",
+      "description": "View your dashboard"
+    }
+  ]
+}

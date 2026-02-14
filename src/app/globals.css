@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 15, 23, 42;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --card-bg: #FFFFFF;
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --card-radius: 24px;
+  --card-radius-sm: 20px;
+  --btn-radius: 18px;
+
+  /* Primary & accents */
+  --primary: #16A34A;
+  --accent: #F97316;
+  --secondary: #0EA5E9;
+  --danger: #EF4444;
+
+  /* Macro colors */
+  --protein-bg: #FEF2F2;
+  --protein-accent: #EF4444;
+  --carbs-bg: #EFF6FF;
+  --carbs-accent: #3B82F6;
+  --fats-bg: #FFFBEB;
+  --fats-accent: #F59E0B;
+  --calories-accent: #F97316;
+  --success: #16A34A;
+  --water-accent: #0EA5E9;
+  --highlight: #F97316;
+}
+
+/* Dark mode variables */
+.dark {
+  --foreground-rgb: 248, 250, 252;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #64748B;
+  --card-bg: #111827;
+  --card-shadow: none;
+
+  --primary: #22C55E;
+  --accent: #FB923C;
+  --secondary: #38BDF8;
+  --danger: #F87171;
+
+  --protein-bg: rgba(239, 68, 68, 0.1);
+  --protein-accent: #EF4444;
+  --carbs-bg: rgba(59, 130, 246, 0.1);
+  --carbs-accent: #60A5FA;
+  --fats-bg: rgba(251, 191, 36, 0.1);
+  --fats-accent: #FBBF24;
+  --calories-accent: #FB923C;
+  --success: #22C55E;
+  --water-accent: #38BDF8;
+  --highlight: #FB923C;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-primary);
+  background: linear-gradient(160deg, #F0FDF4 0%, #DCFCE7 100%) !important;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+html.dark body {
+  background: linear-gradient(160deg, #0B1220 0%, #111827 100%) !important;
+}
+
+/* Hardware acceleration */
+button, a, [role="button"] {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* ================================
+   TRANSPARENT GLASS CARDS (global)
+   ================================ */
+
+/* Light mode: semi-transparent white cards */
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Dark mode: deep navy cards */
+.dark .dark\:bg-gray-800 {
+  background-color: rgba(17, 24, 39, 0.75) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Keep bottom nav more opaque for readability */
+.bottom-nav {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.dark .bottom-nav {
+  background: rgba(11, 18, 32, 0.88) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Custom scrollbar hiding */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ================================
+   SHIMMER / LOADING
+   ================================ */
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.04) 50%, rgba(0,0,0,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ================================
+   BOTTOM NAVIGATION (floating, light)
+   ================================ */
+
+/* bottom-nav styles are set in the glass cards section above */
+
+/* ================================
+   SOFT PROGRESS
+   ================================ */
+
+.progress-bar-soft {
+  background: #F3F4F6;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+/* Custom slider styling */
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #10b981;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #10b981;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
