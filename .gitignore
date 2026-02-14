@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scripts with hardcoded credentials
+scripts/test-app.mjs
+scripts/import-foods.js
